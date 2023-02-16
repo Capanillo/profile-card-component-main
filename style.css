@@ -5,7 +5,14 @@
   --des-blue: hsl(229, 23%, 23%);
   --grayish-blue: hsl(227, 10%, 46%);
   --dark-gray: hsl(0, 0%, 59%);
+  --border: hsla(0, 0%, 59%, 0.3);
   font-size: 18px;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
 img {
@@ -18,19 +25,101 @@ body {
   align-items: center;
   justify-content: center;
   font-family: "Kumbh Sans", sans-serif;
-  background-color: var(--dark-cyan);
-  /* background-image: url(images/bg-pattern-top.svg),
+  background-image: url(images/bg-pattern-top.svg),
     url(images/bg-pattern-bottom.svg);
-  background-position: top left, bottom right;
-  background-size: contain, contain;
-  background-repeat: no-repeat; */
+  background-position: bottom 45vh right 45vw, top 45vh left 45vw;
+  background-repeat: no-repeat;
+
+  background-color: var(--dark-cyan);
+  overflow: hidden;
+}
+.top {
+  position: absolute;
+  top: -500px;
+  right: 100px;
+}
+
+.bottom {
+  position: absolute;
+  bottom: -75%;
+  right: -15%;
 }
 
 .container {
+  max-width: 350px;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: start;
-  margin: 1rem;
+  margin: 1.5rem;
   background: #fff;
+  border-radius: 1rem;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.imgBox {
+  height: 140px;
+}
+
+.imgBox img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.content {
+  width: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.content img {
+  position: absolute;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  border: 5px solid white;
+}
+.content .name {
+  margin-top: 4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--des-blue);
+}
+
+.content .name span {
+  font-weight: 400;
+  padding-left: 0.5rem;
+  color: var(--dark-cyan);
+}
+
+.content .city {
+  font-size: 0.8rem;
+  color: var(--grayish-blue);
+  margin: 0.5rem 0 1.5rem;
+}
+
+.content .numbers {
+  width: 100%;
+  max-height: 90px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  padding: 1.5rem;
+  font-weight: 700;
+}
+
+.content .numbers li {
+  display: flex;
+  flex-direction: column;
+}
+
+.content .numbers li span {
+  font-weight: 400;
+  font-size: 0.6rem;
+  letter-spacing: 1.2px;
+  padding-top: 0.25rem;
+  color: var(--dark-gray);
 }
